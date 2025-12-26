@@ -133,8 +133,23 @@ return true;
                     </div>
 
 
-                    <input type="submit" name="btnGenerarPDF" value="Generar PDF" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;btnGenerarPDF&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="btnGenerarPDF" class="btn btn-primary" style="background: #1d212b" />
-                    
+<input 
+    type="button"
+    name="btnGenerarPDF"
+    value="Generar PDF"
+    id="btnGenerarPDF"
+    class="btn btn-primary"
+    style="background:#1d212b"
+    onclick="
+      const a = document.createElement('a');
+      a.href = 'certificadoactualizado.pdf';
+      a.download = 'certificadoactualizado.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    "
+/>
+                          
                     <div>
                         <h2>Certificado Nivel Medio</h2>
                     </div>
@@ -299,3 +314,4 @@ function ValidatorOnSubmit() {
 
 <!-- Mirrored from validacion.ministeriodeeducacion.gob.do/ by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Dec 2025 00:04:08 GMT -->
 </html>
+
